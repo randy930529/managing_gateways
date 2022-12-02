@@ -1,0 +1,80 @@
+body {
+  height: 100%;
+}
+
+input {
+  margin: 0;
+}
+
+#root {
+  min-width: 100%;
+}
+
+.header {
+  grid-area: header;
+  text-align: center;
+}
+
+.gwtable {
+  grid-area: gwtable;
+}
+
+.actionBar {
+  grid-area: actionBar;
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  border: 1px solid #e0e8eb;
+  padding: 6px;
+}
+
+.actionBar > div {
+  display: grid;
+  gap: 6px;
+}
+
+.grid-container {
+  display: grid;
+  gap: 60px;
+  padding: 60px;
+  justify-content: center;
+  grid-template:
+    "header" 100px
+    "gwtable" auto
+    "actionBar" auto;
+}
+
+.ip {
+  display: flex;
+  max-width: max-content;
+}
+
+.ip > div > * {
+  margin: 1px;
+  max-width: 20px;
+}
+
+.deviceControle {
+  display: flex !important;
+  align-items: center;
+  margin: auto;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template:
+      "header  header" 100px
+      "gwtable actionBar" auto/
+      auto 250px;
+  }
+  input {
+    margin: 1px;
+    margin-left: 20px;
+  }
+  .ip > div:first-child > input {
+    margin-left: 28px;
+  }
+  .deviceInputBar > div:first-child > input {
+    margin-left: 38px;
+  }
+}

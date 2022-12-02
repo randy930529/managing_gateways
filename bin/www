@@ -1,0 +1,13 @@
+const app = require("../app");
+require("dotenv").config();
+const db = require("../config/database");
+db();
+
+app.set("port", process.env.PORT || 3001);
+
+const server = app.listen(app.get("port"), () => {
+  console.log(
+    "Starting Express server at http://127.0.0.1:" + server.address().port,
+    "\nQuit the server with CTRL-BREAK"
+  );
+});
